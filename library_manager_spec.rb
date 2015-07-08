@@ -8,10 +8,10 @@ describe LibraryManager do
   let!(:oscar_wilde) { Author.new(1854, 1900, 'Oscar Wilde') }
   let!(:war_and_peace) { PublishedBook.new(leo_tolstoy, 'War and Peace', 1400, 3280, 1996) }
   let!(:ivan) {Reader.new('Ivan Testenko', 16)}
-  let!(:ivan_testenko) { ReaderWithBook.new(ivan, war_and_peace, 328, (DateTime.now.new_offset(0) + 2.days)) }
+  let!(:ivan_testenko) { ReaderWithBook.new(war_and_peace, ivan, 328, (DateTime.now.new_offset(0) + 2.days)) }
   let!(:manager) { LibraryManager.new([],[], [ivan_testenko]) }
   
-  binding.pry
+  # binding.pry
 
   it 'should compose reader notification' do
     expect(manager.reader_notification("Ivan Testenko")). to eq <<-TEXT

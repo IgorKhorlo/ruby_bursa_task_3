@@ -9,13 +9,13 @@ class PublishedBook < Book
   end
 
   def age
-    Time.now.year - published_at
+    Time.now.utc.year - published_at + 1
   end
 
   def penalty_per_hour
-    price_penalty = price * 0.0005
-    pages_penalty = 0.000003 * price * pages_quantity
-    age_penalty = 0.00007 * price * age
+    price_penalty = 0.0005 * @price
+    pages_penalty = 0.000003 * @price * @pages_quantity
+    age_penalty   = 0.00007 * @price * age
 
     price_penalty + pages_penalty + age_penalty
   end
