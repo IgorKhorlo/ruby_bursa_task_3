@@ -12,9 +12,9 @@ class LibraryManager
   attr_accessor :readers, :books, :readers_with_books
 
   def initialize readers = [], books = [], readers_with_books = []
-    @reader_with_books = readers_with_books
     @readers = readers
     @books = books
+    @readers_with_books = readers_with_books    
   end
 
   def new_book author, title, price, pages_quantity, published_at
@@ -33,8 +33,8 @@ class LibraryManager
 
   end
 
-  def reader_notification
-
+  def reader_notification name
+    
   end
 
   def librarian_notification
@@ -47,16 +47,16 @@ class LibraryManager
 
   private
 
-  def reader_notification_params
-
-  end
-
-  def librarian_notification_params
-
-  end
-
-  def statistics_notification_params
-
-  end
+    def reader_notification_params
+  
+    end
+  
+    def librarian_notification_params
+  
+    end
+  
+    def statistics_notification_params
+  
+    end
 
 end
